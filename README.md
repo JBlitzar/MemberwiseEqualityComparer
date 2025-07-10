@@ -86,11 +86,11 @@ I grew tired of rolling my own IEquatable<T> implementations for non-essential o
 
 ## Performance ##
 
-In theory it shouldn't be possible to outperform implementing IEquatable<T> on your objects and doing every explicit check yourself but the few measurements that I've done so far suggests it's pretty darn snappy once initiated. The code is well optimized and will produce a very efficient equality comparer.
+In theory it shouldn't be possible to outperform implementing IEquatable<T> on your objects and doing every explicit check yourself, but the few measurements that I've done so far suggests it's pretty darn snappy once initiated. The code is well-optimized and will produce a very efficient equality comparer.
 
-Considering the large number of pitfalls when rolling your own I see no reason not to use it, your mileage may vary ofcourse. There's a one-off performance for each type at the first call to Equals and GetHashCode when it emits IL and builds the dynamic method but after that there's really no overhead to writing the same code yourself.
+Considering the large number of pitfalls when rolling your own I see no reason not to use it (your mileage may vary of course). There's a one-off performance for each type at the first call to Equals and GetHashCode when it emits IL and builds the dynamic method but after that there's really no overhead to writing the same code yourself.
 
-As always you should try for yourself. If you have extremely performance sensitive objects that gets compared for equality like crazy then perhaps this is not for you.
+As always, you should try it for yourself. If you have extremely performance-sensitive objects that get compared for equality like crazy then perhaps this is not for you.
 
 ## Changelog ##
 
